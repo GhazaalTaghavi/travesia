@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { TripProvider } from './context/TripContext';
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
@@ -13,7 +13,7 @@ import TravelStayPage from './pages/TravelStayPage';
 export default function App() {
   return (
     <TripProvider>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<HomePage />} />
@@ -26,7 +26,7 @@ export default function App() {
             <Route path="/travel-stay" element={<TravelStayPage />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </TripProvider>
   );
 }
